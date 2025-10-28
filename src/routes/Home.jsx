@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "../components/Button";
 
 function Home() {
   const [fact, setFact] = useState("Click the button to get a cat fact!");
@@ -22,22 +23,9 @@ function Home() {
     <div>
       <h1>🐱 Cat Facts</h1>
 
-      <button
-        onClick={getFact}
-        disabled={loading}
-        style={{
-          padding: "10px 20px",
-          fontSize: "16px",
-          cursor: loading ? "not-allowed" : "pointer",
-          backgroundColor: loading ? "#ccc" : "#4CAF50",
-          color: "white",
-          border: "none",
-          borderRadius: "5px",
-          marginBottom: "20px",
-        }}
-      >
+      <Button onClick={getFact} disabled={loading}>
         {loading ? "Loading..." : "Get Random Fact"}
-      </button>
+      </Button>
 
       <div
         style={{
@@ -45,6 +33,7 @@ function Home() {
           backgroundColor: "#f9f9f9",
           borderRadius: "8px",
           border: "2px solid #ddd",
+          marginTop: "20px",
         }}
       >
         <p style={{ fontSize: "18px", lineHeight: "1.6" }}>{fact}</p>
